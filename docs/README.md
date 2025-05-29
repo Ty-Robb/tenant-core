@@ -12,31 +12,37 @@ Welcome to the comprehensive documentation for the Payload CMS multi-tenant syst
    - User roles and access patterns
    - Quick start guide
 
-2. **[Technical Implementation](./TENANTS-TECHNICAL.md)**
+2. **[User Guide](./TENANTS-USER-GUIDE.md)**
+   - Complete user journey from sign-up to daily use
+   - Team management and invitations
+   - Multi-tenant user scenarios
+   - Real-world examples and FAQs
+
+3. **[Technical Implementation](./TENANTS-TECHNICAL.md)**
    - Database schema and relationships
    - Middleware and request handling
    - Access control implementation
    - Session and cookie management
 
-3. **[API Usage](./TENANTS-API.md)**
+4. **[API Usage](./TENANTS-API.md)**
    - REST API endpoints
    - GraphQL queries and mutations
    - Authentication and authorization
    - Tenant context in API calls
 
-4. **[Common Patterns](./TENANTS-PATTERNS.md)**
+5. **[Common Patterns](./TENANTS-PATTERNS.md)**
    - Code recipes and examples
    - Best practices
    - Common use cases
    - Performance optimization
 
-5. **[Setup Guide](./TENANTS-SETUP.md)**
+6. **[Setup Guide](./TENANTS-SETUP.md)**
    - Step-by-step installation
    - Configuration options
    - Environment variables
    - Troubleshooting
 
-6. **[Self-Service Registration](./TENANTS-SELF-SERVICE.md)**
+7. **[Self-Service Registration](./TENANTS-SELF-SERVICE.md)**
    - Building sign-up flows
    - Subdomain provisioning
    - Tenant onboarding
