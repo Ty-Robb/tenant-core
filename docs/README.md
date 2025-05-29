@@ -51,6 +51,16 @@ If you're new to this system, we recommend reading the documentation in this ord
 3. Review [Technical Implementation](./TENANTS-TECHNICAL.md) to understand how it works
 4. Explore [Common Patterns](./TENANTS-PATTERNS.md) for practical examples
 
+## 🔑 Test Credentials
+
+For quick testing, use these seeded accounts:
+
+- **Super Admin**: demo@payloadcms.com / demo (access all tenants)
+- **Tenant 1 Admin**: tenant1@payloadcms.com / demo (gold tenant only)
+- **Multi-Tenant Admin**: multi-admin@payloadcms.com / demo (all tenants)
+
+See [TENANT_LOGINS.md](../TENANT_LOGINS.md) for complete credential list.
+
 ## 🔧 Key Features
 
 - **Subdomain-based routing**: Each tenant gets their own subdomain
