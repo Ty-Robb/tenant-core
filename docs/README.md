@@ -48,6 +48,12 @@ Welcome to the comprehensive documentation for the Payload CMS multi-tenant syst
    - Tenant onboarding
    - Email verification
 
+8. **[Stripe Integration](./STRIPE-INTEGRATION.md)**
+   - Payment processing setup
+   - Multi-tenant billing
+   - Subscription management
+   - Webhook configuration
+
 ## 🚀 Quick Start
 
 If you're new to this system, we recommend reading the documentation in this order:

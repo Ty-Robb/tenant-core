@@ -8,7 +8,9 @@ import { fileURLToPath } from 'url'
 import { Pages } from './collections/Pages'
 import { Tenants } from './collections/Tenants'
 import Users from './collections/Users'
+
 import { multiTenantPlugin } from '@payloadcms/plugin-multi-tenant'
+import { stripePlugin } from '@payloadcms/plugin-stripe'
 import { isSuperAdmin } from './access/isSuperAdmin'
 import type { Config } from './payload-types'
 import { getUserTenantIDs } from './utilities/getUserTenantIDs'
@@ -32,7 +34,7 @@ export default buildConfig({
     },
   }),
   onInit: async (args) => {
-    if (process.env.SEED_DB) {
+    if (process.env.SEED_DB === 'true') {
       await seed(args)
     }
   },
@@ -45,6 +47,30 @@ export default buildConfig({
     outputFile: path.resolve(dirname, 'payload-types.ts'),
   },
   plugins: [
+    // Only enable Stripe plugin if we have valid keys
+    ...(process.env.STRIPE_SECRET_KEY && process.env.STRIPE_SECRET_KEY.startsWith('sk_')
+      ? [
+          stripePlugin({
+            stripeSecretKey: process.env.STRIPE_SECRET_KEY,
+            isTestKey: process.env.STRIPE_SECRET_KEY.includes('test'),
+            stripeWebhooksEndpointSecret: process.env.STRIPE_WEBHOOKS_ENDPOINT_SECRET,
+            rest: false,
+            sync: [
+              {
+                collection: 'users',
+                stripeResourceType: 'customers',
+                stripeResourceTypeSingular: 'customer',
+                fields: [
+                  {
+                    fieldPath: 'email',
+                    stripeProperty: 'email',
+                  },
+                ],
+              },
+            ],
+          }),
+        ]
+      : []),
     multiTenantPlugin<Config>({
       collections: {
         pages: {},
