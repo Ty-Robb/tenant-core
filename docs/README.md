@@ -48,6 +48,43 @@ Welcome to the comprehensive documentation for the Payload CMS multi-tenant syst
    - Tenant onboarding
    - Email verification
 
+### Stripe Documentation
+
+8. **[Stripe Overview](./STRIPE-OVERVIEW.md)**
+   - Introduction to Stripe integration
+   - Architecture and data flow
+   - Multi-tenant billing models
+   - Key benefits and use cases
+
+9. **[Stripe Technical Implementation](./STRIPE-TECHNICAL.md)**
+   - Plugin configuration details
+   - Database schema and collections
+   - Hooks and middleware
+   - Security considerations
+
+10. **[Stripe Setup Guide](./STRIPE-SETUP.md)**
+    - Step-by-step installation
+    - Environment configuration
+    - Testing the integration
+    - Production deployment
+
+11. **[Stripe Common Patterns](./STRIPE-PATTERNS.md)**
+    - Subscription management code
+    - Checkout implementations
+    - Webhook handling patterns
+    - Error handling and testing
+
+12. **[Stripe API Reference](./STRIPE-API.md)**
+    - Endpoint documentation
+    - Request/response formats
+    - Authentication and rate limiting
+    - Error codes and testing
+
+13. **[Stripe Integration Guide](./STRIPE-INTEGRATION.md)**
+    - Quick reference guide
+    - Configuration examples
+    - Troubleshooting tips
+
 ## 🚀 Quick Start
 
 If you're new to this system, we recommend reading the documentation in this order:
