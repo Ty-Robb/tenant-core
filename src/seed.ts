@@ -1,30 +1,34 @@
 import { Config } from 'payload'
 
 export const seed: NonNullable<Config['onInit']> = async (payload): Promise<void> => {
+  // Determine domain based on environment
+  const isProduction = process.env.NODE_ENV === 'production'
+  const baseDomain = isProduction ? 'usepriority.com' : 'localhost:3000'
+  
   const tenant1 = await payload.create({
     collection: 'tenants',
     data: {
-      name: 'Tenant 1',
+      name: 'Gold',
       slug: 'gold',
-      domain: 'gold.localhost',
+      domain: `gold.${baseDomain}`,
     },
   })
 
   const tenant2 = await payload.create({
     collection: 'tenants',
     data: {
-      name: 'Tenant 2',
+      name: 'Silver',
       slug: 'silver',
-      domain: 'silver.localhost',
+      domain: `silver.${baseDomain}`,
     },
   })
 
   const tenant3 = await payload.create({
     collection: 'tenants',
     data: {
-      name: 'Tenant 3',
+      name: 'Bronze',
       slug: 'bronze',
-      domain: 'bronze.localhost',
+      domain: `bronze.${baseDomain}`,
     },
   })
 
