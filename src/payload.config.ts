@@ -25,14 +25,14 @@ export default buildConfig({
     user: 'users',
   },
   collections: [Pages, Users, Tenants],
-  // db: mongooseAdapter({
-  //   url: process.env.DATABASE_URI as string,
-  // }),
-  db: postgresAdapter({
-    pool: {
-      connectionString: process.env.POSTGRES_URL,
-    },
+  db: mongooseAdapter({
+    url: process.env.DATABASE_URI as string,
   }),
+  // db: postgresAdapter({
+  //   pool: {
+  //     connectionString: process.env.POSTGRES_URL,
+  //   },
+  // }),
   onInit: async (args) => {
     if (process.env.SEED_DB === 'true') {
       await seed(args)
