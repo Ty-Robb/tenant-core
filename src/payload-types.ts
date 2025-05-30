@@ -164,6 +164,8 @@ export interface User {
         id?: string | null;
       }[]
     | null;
+  stripeID?: string | null;
+  skipSync?: boolean | null;
   updatedAt: string;
   createdAt: string;
   email: string;
@@ -261,6 +263,8 @@ export interface UsersSelect<T extends boolean = true> {
         roles?: T;
         id?: T;
       };
+  stripeID?: T;
+  skipSync?: T;
   updatedAt?: T;
   createdAt?: T;
   email?: T;
